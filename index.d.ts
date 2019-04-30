@@ -55,20 +55,6 @@ declare namespace koaBody {
     }
     interface IKoaBodyOptions {
         /**
-         * {Boolean} Patch request body to Node's ctx.req, default false
-         *
-         * Note: You can patch request body to Node or Koa in same time if you want.
-         */
-        patchNode?: boolean;
-
-        /**
-         * {Boolean} Patch request body to Koa's ctx.request, default true
-         *
-         * Note: You can patch request body to Node or Koa in same time if you want.
-         */
-        patchKoa?: boolean;
-
-        /**
          * {String|Integer} The byte (if integer) limit of the JSON body, default 1mb
          */
         jsonLimit?: string|number;
@@ -138,17 +124,6 @@ declare namespace koaBody {
          * {Function} Custom error handle, if throw an error, you can customize the response - onError(error, context), default will throw
          */
         onError?: (err: Error, ctx: Koa.Context) => void;
-
-        /**
-         * {Boolean} If enabled, don't parse GET, HEAD, DELETE requests; deprecated.
-         *
-         * GET, HEAD, and DELETE requests have no defined semantics for the request body,
-         * but this doesn't mean they may not be valid in certain use cases.
-         * koa-body is strict by default
-         *
-         * see http://tools.ietf.org/html/draft-ietf-httpbis-p2-semantics-19#section-6.3
-         */
-        strict?: boolean;
 
         /**
          * {String[]} What HTTP methods to enable body parsing for; should be used in preference to strict mode.

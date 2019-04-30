@@ -1,3 +1,16 @@
+## 5.0.0 (Unreleased)
+
+### Breaking Changes
+- drops support for Node.js 6
+- deprecated `strict` option removed
+- drops `patchNode` option
+  - there is not longer an option to add body to the node `request` object
+- drops `patchKoa` option
+  - body is always added to Koa's `ctx.request` object
+
+### Non-Breaking Changes
+- TODO
+
 ## 4.1.0
 - adds `parsedMethods` option to specify which request methods will be parsed
 - deprecates `strict` option, which will be removed in koa-body 5.0.0

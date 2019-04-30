@@ -85,8 +85,6 @@ console.log('curl -i http://localhost:3000/users -d "name=test"');
 ## Options
 > Options available for `koa-body`. Four custom options, and others are from `raw-body` and `formidable`.
 
-- `patchNode` **{Boolean}** Patch request body to Node's `ctx.req`, default `false`
-- `patchKoa` **{Boolean}** Patch request body to Koa's `ctx.request`, default `true`
 - `jsonLimit` **{String|Integer}** The byte (if integer) limit of the JSON body, default `1mb`
 - `formLimit` **{String|Integer}** The byte (if integer) limit of the form body, default `56kb`
 - `textLimit` **{String|Integer}** The byte (if integer) limit of the text body, default `56kb`
@@ -99,8 +97,7 @@ console.log('curl -i http://localhost:3000/users -d "name=test"');
 - `includeUnparsed` **{Boolean}** Toggles co-body returnRawBody option; if set to true, for form encodedand and JSON requests the raw, unparsed requesty body will be attached to `ctx.reqeust.body` using a `Symbol`, default `false`
 - `formidable` **{Object}** Options to pass to the formidable multipart parser
 - `onError` **{Function}** Custom error handle, if throw an error, you can customize the response - onError(error, context), default will throw
-- `strict` **{Boolean}** ***DEPRECATED*** If enabled, don't parse GET, HEAD, DELETE requests, default `true`
-- `parsedMethods` **{String[]}** Declares the HTTP methods where bodies will be parsed, default `['POST', 'PUT', 'PATCH']`. Replaces `strict` option.
+- `parsedMethods` **{String[]}** Declares the HTTP methods where bodies will be parsed, default `['POST', 'PUT', 'PATCH']`.
 
 ## A note about `parsedMethods`
 > see [http://tools.ietf.org/html/draft-ietf-httpbis-p2-semantics-19#section-6.3](http://tools.ietf.org/html/draft-ietf-httpbis-p2-semantics-19#section-6.3)
@@ -123,10 +120,8 @@ Some applications require crytopgraphic verification of request bodies, for exam
 ## Changelog
 Please see the [Changelog](./CHANGELOG.md) for a summary of changes.
 
-## Tests
-```
-$ npm test
-```
+## Tests/Coverage
+See the [testing readme](./test/README.md).
 
 ## License
 The MIT License, 2014 [Charlike Mike Reagent](https://github.com/tunnckoCore) ([@tunnckoCore](https://twitter.com/tunnckoCore)) and [Daryl Lau](https://github.com/dlau) ([@daryllau](https://twitter.com/daryllau))
